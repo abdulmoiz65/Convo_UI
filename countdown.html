@@ -1,0 +1,852 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Convocation 2025 — Your University</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons (optional) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --brand: #7a0019;      /* maroon */
+      --brand-2: #cfae4e;    /* gold */
+      --dark: #1a1a1a;
+      --muted: #6c757d;
+      --light: #f8f9fa;
+    }
+    html { scroll-behavior: smooth; }
+    body { color: #222; }
+
+    /* Navbar */
+    .navbar { box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+    .navbar-brand img { height: 40px; width: auto; }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 82vh;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      text-align: center;
+      background:
+        linear-gradient(135deg, rgba(122,0,25,.78), rgba(0,0,0,.55)),
+        url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+    }
+    .hero .lead { color: #f1e9e9; }
+    .badge-soft {
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.25);
+      color: #fff;
+    }
+
+    /* Brand helpers */
+    .bg-brand { background-color: var(--brand) !important; }
+    .text-brand { color: var(--brand) !important; }
+    .border-brand { border-color: var(--brand) !important; }
+    .btn-brand {
+      background-color: var(--brand);
+      color: #fff;
+      border: none;
+    }
+    .btn-brand:hover { background-color: #5d0012; color: #fff; }
+    .btn-outline-brand {
+      border: 1px solid var(--brand);
+      color: var(--brand);
+    }
+    .btn-outline-brand:hover {
+      background-color: var(--brand);
+      color: #fff;
+    }
+
+    /* Sections */
+    section { padding: 5rem 0; }
+    [id] { scroll-margin-top: 6rem; } /* anchor offset for sticky navbar */
+    .section-title {
+      position: relative;
+      padding-bottom: .6rem;
+      margin-bottom: 1.5rem;
+    }
+    .section-title:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 72px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--brand), var(--brand-2));
+      border-radius: 2px;
+    }
+
+    /* Timeline style (schedule) */
+    .timeline {
+      border-left: 3px solid rgba(122,0,25,.2);
+      margin-left: .6rem;
+      padding-left: 1.2rem;
+    }
+    .timeline .item + .item { margin-top: 1rem; }
+    .timeline .time-badge {
+      font-weight: 600;
+      background: rgba(122,0,25,.08);
+      border: 1px solid rgba(122,0,25,.25);
+      color: var(--brand);
+    }
+
+    /* Cards hover */
+    .card.hover-up { transition: transform .25s ease, box-shadow .25s ease; }
+    .card.hover-up:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,.08); }
+
+    /* Back to top */
+    #backToTop {
+      position: fixed;
+      bottom: 20px; right: 20px;
+      z-index: 1030;
+      display: none;
+    }
+
+    /* Footer */
+    .footer {
+      background: #0f0f0f;
+      color: #c9c9c9;
+    }
+    .footer a { color: #e8e8e8; text-decoration: none; }
+    .footer a:hover { color: #fff; text-decoration: underline; }
+
+    /* Small tweaks */
+    .list-check li { padding-left: 1.75rem; position: relative; }
+    .list-check li:before {
+      content: "\f26e"; /* check2-circle */
+      font-family: "bootstrap-icons";
+      position: absolute; left: 0; top: 2px;
+      color: var(--brand);
+    }
+
+
+    /* Message  */
+
+    /* Leadership Messages */
+.messages .msg-card { border: 0; border-radius: 1rem; box-shadow: 0 10px 24px rgba(0,0,0,.08); }
+.messages .msg-photo { border-radius: 1rem; overflow: hidden; box-shadow: 0 10px 24px rgba(0,0,0,.08); }
+.messages .msg-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.messages .msg-accent { background: var(--brand, #7a0019); color: #fff; }
+.messages .msg-accent .text-muted { color: #f0e9e9 !important; }
+.messages .signature { font-weight: 600; margin-top: .75rem; }
+.messages .title-small { font-size: .9rem; color: #6c757d; }
+.messages .readmore-btn { border: 0; background: transparent; color: inherit; text-decoration: underline; padding: 0; }
+@media (min-width: 992px) {
+  .messages .msg-photo.tall { height: 260px; }
+}
+  </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="90" tabindex="0">
+
+  <!-- NAVBAR -->
+  <nav id="mainNav" class="navbar navbar-expand-lg bg-white sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <!-- Replace with your logo -->
+        <img src="https://dummyimage.com/80x40/7a0019/ffffff&text=LOGO" alt="University Logo">
+        <span class="fw-bold text-brand">Convocation 2025</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse" aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div id="navCollapse" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#schedule">Schedule</a></li>
+          <li class="nav-item"><a class="nav-link" href="#registration">Registration</a></li>
+          <li class="nav-item"><a class="nav-link" href="#guidelines">Guidelines</a></li>
+          <li class="nav-item"><a class="nav-link" href="#downloads">Downloads</a></li>
+          <li class="nav-item"><a class="nav-link" href="#venue">Venue</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-sm btn-brand" href="#registration"><i class="bi bi-pencil-square me-1"></i> Register</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="hero">
+    <div class="container py-5">
+      <span class="badge badge-soft rounded-pill px-3 py-2 mb-3"><i class="bi bi-mortarboard-fill me-1"></i> Annual Convocation</span>
+      <h1 class="display-4 fw-bold">Class of 2025 Convocation</h1>
+      <p class="lead mb-4">Saturday, December 20, 2025 • 9:30 AM • Main Campus Grounds</p>
+
+      <div class="row g-3 justify-content-center mb-4" id="countdown">
+        <div class="col-6 col-sm-3">
+          <div class="card bg-transparent border-light text-center">
+            <div class="card-body">
+              <div class="h2 fw-bold mb-0" id="cd-days">--</div>
+              <small class="text-uppercase">Days</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-3">
+          <div class="card bg-transparent border-light text-center">
+            <div class="card-body">
+              <div class="h2 fw-bold mb-0" id="cd-hours">--</div>
+              <small class="text-uppercase">Hours</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-3">
+          <div class="card bg-transparent border-light text-center">
+            <div class="card-body">
+              <div class="h2 fw-bold mb-0" id="cd-mins">--</div>
+              <small class="text-uppercase">Minutes</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-3">
+          <div class="card bg-transparent border-light text-center">
+            <div class="card-body">
+              <div class="h2 fw-bold mb-0" id="cd-secs">--</div>
+              <small class="text-uppercase">Seconds</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-wrap gap-2 justify-content-center">
+        <a href="#registration" class="btn btn-brand btn-lg"><i class="bi bi-pencil me-1"></i> Register Now</a>
+        <a href="#guidelines" class="btn btn-outline-light btn-lg"><i class="bi bi-card-checklist me-1"></i> Guidelines</a>
+        <a href="#downloads" class="btn btn-outline-light btn-lg"><i class="bi bi-download me-1"></i> Downloads</a>
+      </div>
+    </div>
+  </header>
+
+
+
+  <section id="messages" class="messages py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title">Messages from Leadership</h2>
+
+    <!-- Message 1: Image left, text right -->
+    <div class="row align-items-center g-4 mb-4">
+      <div class="col-lg-4">
+        <div class="msg-photo tall">
+          <img src="/President.jpg" alt="Leader portrait">
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card msg-card">
+          <div class="card-body p-4 p-lg-5">
+            <p class="mb-2 title-small text-uppercase fw-semibold">Message</p>
+            <h5 class="fw-bold mb-2">My Dearest Students,</h5>
+            <p class="mb-2">
+              I extend my heartfelt congratulations to each of you on reaching this milestone in your academic journey. Your dedication and resilience have brought you here, and we’re incredibly proud of your achievements.
+              <span class="collapse" id="msg1-more">
+                As you step forward, remember that learning never stops. Carry your curiosity, kindness, and courage into every endeavor, and uplift others as you rise.
+              </span>
+            </p>
+            <button class="readmore-btn" data-bs-toggle="collapse" data-bs-target="#msg1-more" aria-expanded="false" aria-controls="msg1-more">read more</button>
+            <div class="signature">Dr. A. Khan</div>
+            <small class="text-muted">Director, Your University</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Message 2: Accent block (maroon) text left, image right -->
+    <div class="row align-items-center g-4 mb-4">
+      <div class="col-lg-8 order-lg-1">
+        <div class="card msg-card msg-accent">
+          <div class="card-body p-4 p-lg-5">
+            <p class="mb-2 title-small text-uppercase fw-semibold text-white-50">Message</p>
+            <h5 class="fw-bold mb-2 text-white">Dear Class of 2025,</h5>
+            <p class="mb-2">
+              Congratulations on the successful completion of your degree programs. This is a new beginning for you to pursue excellence and make a meaningful impact in your fields and communities.
+              <span class="collapse" id="msg2-more">
+                As alumni, stay engaged with your alma mater, mentor those who follow, and continue to learn and serve wherever possible.
+              </span>
+            </p>
+            <button class="readmore-btn text-white-50" data-bs-toggle="collapse" data-bs-target="#msg2-more" aria-expanded="false" aria-controls="msg2-more">read more</button>
+            <div class="signature">Dr. M. Ilyas</div>
+            <small class="text-white-50">Registrar, Your University</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 order-lg-2">
+        <div class="msg-photo tall">
+          <img src="/KK.jpg" alt="Leader portrait">
+        </div>
+      </div>
+    </div>
+
+    <!-- Message 3: Image left, text right -->
+    <div class="row align-items-center g-4">
+      <div class="col-lg-4">
+        <div class="msg-photo tall">
+          <img src="/President.jpg" alt="Leader portrait">
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card msg-card">
+          <div class="card-body p-4 p-lg-5">
+            <p class="mb-2 title-small text-uppercase fw-semibold">Message</p>
+            <h5 class="fw-bold mb-2">My Dear Graduates and Fellow Alumni,</h5>
+            <p class="mb-2">
+              You’ve overcome challenges, achieved remarkable milestones, and built friendships that will last a lifetime. Celebrate this moment and look ahead with confidence.
+              <span class="collapse" id="msg3-more">
+                Keep your values at the center of all you pursue, and remember that your network and community are your strength.
+              </span>
+            </p>
+            <button class="readmore-btn" data-bs-toggle="collapse" data-bs-target="#msg3-more" aria-expanded="false" aria-controls="msg3-more">read more</button>
+            <div class="signature">M. Sohail</div>
+            <small class="text-muted">Alumni Representative, Board of Governors</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- HIGHLIGHTS -->
+  <section>
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="card hover-up border-0 shadow-sm h-100">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-3">
+                <div class="rounded-circle bg-brand text-white d-inline-flex align-items-center justify-content-center me-3" style="width:44px;height:44px;">
+                  <i class="bi bi-calendar2-event"></i>
+                </div>
+                <h5 class="mb-0">Event Details</h5>
+              </div>
+              <ul class="list-unstyled mb-0">
+                <li><strong>Date:</strong> Dec 20, 2025 (Sat)</li>
+                <li><strong>Time:</strong> 9:30 AM onwards</li>
+                <li><strong>Venue:</strong> Main Campus Grounds</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card hover-up border-0 shadow-sm h-100">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-3">
+                <div class="rounded-circle bg-brand text-white d-inline-flex align-items-center justify-content-center me-3" style="width:44px;height:44px;">
+                  <i class="bi bi-person-badge"></i>
+                </div>
+                <h5 class="mb-0">Who Can Attend</h5>
+              </div>
+              <p class="mb-0">Graduates who completed degree requirements by the stipulated deadline and have cleared all dues are eligible to participate.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card hover-up border-0 shadow-sm h-100">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-3">
+                <div class="rounded-circle bg-brand text-white d-inline-flex align-items-center justify-content-center me-3" style="width:44px;height:44px;">
+                  <i class="bi bi-ticket-perforated"></i>
+                </div>
+                <h5 class="mb-0">Guest Passes</h5>
+              </div>
+              <p class="mb-0">Each graduating student may receive up to 2 guest passes (subject to capacity and security protocols).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="row gy-4 align-items-center">
+        <div class="col-lg-6">
+          <h2 class="section-title">About the Convocation</h2>
+          <p>Convocation celebrates academic achievement and marks the beginning of your professional journey. The ceremony includes a formal procession, conferral of degrees, and addresses by distinguished guests.</p>
+          <ul class="list-check mb-4">
+            <li>Mandatory rehearsal for all graduating students.</li>
+            <li>Academic regalia (gown, hood, cap) required for entry.</li>
+            <li>Security checks and ID verification at the gate.</li>
+          </ul>
+          <div class="d-flex gap-2">
+            <a href="#registration" class="btn btn-brand"><i class="bi bi-pencil-square me-1"></i> Start Registration</a>
+            <a href="#faq" class="btn btn-outline-brand"><i class="bi bi-question-circle me-1"></i> Read FAQs</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <img class="img-fluid rounded shadow" src="https://images.unsplash.com/photo-1555375771-14b2a63968a0?q=80&w=1200&auto=format&fit=crop" alt="Graduation celebration">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UPDATES / NOTICES -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Updates & Notices</h2>
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+          Gown collection schedule announced
+          <span class="badge bg-brand rounded-pill">New</span>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">Last date to register without late fee: Nov 25, 2025</a>
+        <a href="#" class="list-group-item list-group-item-action">Parking and entry guidelines for guests</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section id="schedule" class="bg-light">
+    <div class="container">
+      <h2 class="section-title">Event Schedule</h2>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="mb-3"><i class="bi bi-sun me-1 text-brand"></i> Morning Session</h5>
+              <div class="timeline">
+                <div class="item">
+                  <span class="badge rounded-pill time-badge">08:00</span>
+                  <div class="ms-3">
+                    <h6 class="mb-1">Registration & Gowning</h6>
+                    <small class="text-muted">Student Activity Center</small>
+                  </div>
+                </div>
+                <div class="item">
+                  <span class="badge rounded-pill time-badge">09:30</span>
+                  <div class="ms-3">
+                    <h6 class="mb-1">Academic Procession</h6>
+                    <small class="text-muted">Main Ground</small>
+                  </div>
+                </div>
+                <div class="item">
+                  <span class="badge rounded-pill time-badge">10:00</span>
+                  <div class="ms-3">
+                    <h6 class="mb-1">Opening & Address</h6>
+                    <small class="text-muted">Rector's welcome, keynote address</small>
+                  </div>
+                </div>
+                <div class="item">
+                  <span class="badge rounded-pill time-badge">10:45</span>
+                  <div class="ms-3">
+                    <h6 class="mb-1">Conferral of Degrees</h6>
+                    <small class="text-muted">Undergraduate programs</small>
+                  </div>
+                </div>
+                <div class="item">
+                  <span class="badge rounded-pill time-badge">12:00</span>
+                  <div class="ms-3">
+                    <h6 class="mb-1">Group Photos</h6>
+                    <small class="text-muted">Designated photo booths</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- col -->
+
+        <div class="col-lg-6">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="mb-3"><i class="bi bi-cloud-sun me-1 text-brand"></i> Afternoon Session</h5>
+              <div class="timeline">
+                <div class="item">
+                  <span class="badge rounded-pill time-badge">13:00</span>
+                  <div class="ms-3">
+                    <h6 class="mb-1">Check-in & Gowning</h6>
+                    <small class="text-muted">Student Activity Center</small>
+                  </div>
+                </div>
+                <div class="item">
+                  <span class="badge rounded-pill time-badge">14:00</span>
+                  <div class="ms-3">
+                    <h6 class="mb-1">Procession & Seating</h6>
+                    <small class="text-muted">Main Ground</small>
+                  </div>
+                </div>
+                <div class="item">
+                  <span class="badge rounded-pill time-badge">14:30</span>
+                  <div class="ms-3">
+                    <h6 class="mb-1">Awards & Medals</h6>
+                    <small class="text-muted">Best theses and academic excellence</small>
+                  </div>
+                </div>
+                <div class="item">
+                  <span class="badge rounded-pill time-badge">15:15</span>
+                  <div class="ms-3">
+                    <h6 class="mb-1">Conferral of Degrees</h6>
+                    <small class="text-muted">Graduate programs</small>
+                  </div>
+                </div>
+                <div class="item">
+                  <span class="badge rounded-pill time-badge">16:30</span>
+                  <div class="ms-3">
+                    <h6 class="mb-1">Closing & Refreshments</h6>
+                    <small class="text-muted">Refreshments for graduates & guests</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- col -->
+      </div><!-- row -->
+    </div>
+  </section>
+
+  <!-- REGISTRATION -->
+  <section id="registration">
+    <div class="container">
+      <h2 class="section-title">Registration</h2>
+      <p class="mb-4">Complete the following steps to confirm your participation. Late registrations may incur a fee and are subject to approval.</p>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card hover-up h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-3">
+                <span class="badge bg-brand rounded-pill me-2">1</span>
+                <h5 class="mb-0">Profile & Eligibility</h5>
+              </div>
+              <p class="mb-0">Verify your name spelling, program, and completion status. Clear any outstanding dues with Accounts.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card hover-up h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-3">
+                <span class="badge bg-brand rounded-pill me-2">2</span>
+                <h5 class="mb-0">Form & Fee</h5>
+              </div>
+              <p class="mb-0">Fill in the convocation form, select guest passes, and pay the convocation fee (if applicable).</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card hover-up h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-3">
+                <span class="badge bg-brand rounded-pill me-2">3</span>
+                <h5 class="mb-0">Gown & Rehearsal</h5>
+              </div>
+              <p class="mb-0">Collect regalia as per schedule and attend the mandatory rehearsal one day before the event.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 d-flex gap-2">
+        <a href="#" class="btn btn-brand btn-lg"><i class="bi bi-box-arrow-in-right me-1"></i> Go to Registration Portal</a>
+        <a href="#faq" class="btn btn-outline-brand btn-lg"><i class="bi bi-info-circle me-1"></i> Registration FAQs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUIDELINES -->
+  <section id="guidelines" class="bg-light">
+    <div class="container">
+      <h2 class="section-title">Guidelines</h2>
+      <div class="accordion" id="guideAcc">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="g1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c1" aria-expanded="true" aria-controls="c1">
+              Entry & Security
+            </button>
+          </h2>
+        <div id="c1" class="accordion-collapse collapse show" aria-labelledby="g1" data-bs-parent="#guideAcc">
+            <div class="accordion-body">
+              • Bring your student ID and registration slip. • Arrive at least 60 minutes early. • Large bags and restricted items are not allowed.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="g2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2" aria-expanded="false" aria-controls="c2">
+              Academic Regalia
+            </button>
+          </h2>
+          <div id="c2" class="accordion-collapse collapse" aria-labelledby="g2" data-bs-parent="#guideAcc">
+            <div class="accordion-body">
+              • Gown, hood, and cap are compulsory. • Dress formally and comfortably. • Return gowns as per instructions to avoid penalties.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="g3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c3" aria-expanded="false" aria-controls="c3">
+              Guests & Seating
+            </button>
+          </h2>
+          <div id="c3" class="accordion-collapse collapse" aria-labelledby="g3" data-bs-parent="#guideAcc">
+            <div class="accordion-body">
+              • Only registered guests with passes are allowed. • Children under 12 may not be permitted, subject to policy. • Keep aisles clear for procession.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOADS -->
+  <section id="downloads">
+    <div class="container">
+      <h2 class="section-title">Downloads</h2>
+      <div class="row g-3">
+        <div class="col-md-6 col-lg-4">
+          <a class="card hover-up border-0 shadow-sm h-100 text-decoration-none" href="#" download>
+            <div class="card-body d-flex align-items-center">
+              <i class="bi bi-file-pdf text-brand fs-2 me-3"></i>
+              <div>
+                <h6 class="mb-1">Convocation Guidelines (PDF)</h6>
+                <small class="text-muted">Updated: Oct 2025 • 1.2 MB</small>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <a class="card hover-up border-0 shadow-sm h-100 text-decoration-none" href="#" download>
+            <div class="card-body d-flex align-items-center">
+              <i class="bi bi-file-earmark-excel text-brand fs-2 me-3"></i>
+              <div>
+                <h6 class="mb-1">Rehearsal Attendance Sheet</h6>
+                <small class="text-muted">XLSX</small>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <a class="card hover-up border-0 shadow-sm h-100 text-decoration-none" href="#" download>
+            <div class="card-body d-flex align-items-center">
+              <i class="bi bi-file-earmark-text text-brand fs-2 me-3"></i>
+              <div>
+                <h6 class="mb-1">Procession Order & Seating Plan</h6>
+                <small class="text-muted">DOCX</small>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VENUE -->
+  <section id="venue" class="bg-light">
+    <div class="container">
+      <h2 class="section-title">Venue</h2>
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-5">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+              <h5>Main Campus Grounds</h5>
+              <p class="mb-2">University Avenue, City, Country</p>
+              <ul class="list-unstyled text-muted mb-4">
+                <li><i class="bi bi-geo-alt me-2"></i>Entry via Gate 3 (Graduates) & Gate 1 (Guests)</li>
+                <li><i class="bi bi-car-front me-2"></i>Parking available in Lot A & B</li>
+                <li><i class="bi bi-shield-check me-2"></i>Security check at entry</li>
+              </ul>
+              <a class="btn btn-outline-brand" target="_blank" href="https://maps.google.com/?q=IBA+Main+Campus">Open in Google Maps</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="ratio ratio-16x9 shadow-sm rounded overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps?q=University%20Main%20Campus&output=embed"
+              title="Map"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              style="border:0;"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="accordion" id="faqAcc">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="f1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#fc1" aria-expanded="true" aria-controls="fc1">
+              Can I change the spelling on my certificate?
+            </button>
+          </h2>
+          <div id="fc1" class="accordion-collapse collapse show" aria-labelledby="f1" data-bs-parent="#faqAcc">
+            <div class="accordion-body">
+              Name changes require official documentation. Contact the Exams Office before printing deadlines.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="f2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc2" aria-expanded="false" aria-controls="fc2">
+              How many guests can I bring?
+            </button>
+          </h2>
+          <div id="fc2" class="accordion-collapse collapse" aria-labelledby="f2" data-bs-parent="#faqAcc">
+            <div class="accordion-body">
+              Typically 2 guest passes per student, subject to venue capacity and safety protocols.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="f3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc3" aria-expanded="false" aria-controls="fc3">
+              Is rehearsal mandatory?
+            </button>
+          </h2>
+          <div id="fc3" class="accordion-collapse collapse" aria-labelledby="f3" data-bs-parent="#faqAcc">
+            <div class="accordion-body">
+              Yes. Rehearsal ensures smooth procession and seating. Absentees may be barred from the ceremony.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="bg-white">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+              <h5><i class="bi bi-envelope-paper me-2 text-brand"></i> Email</h5>
+              <p class="mb-0"><a href="mailto:convocation@youruniversity.edu">convocation@youruniversity.edu</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+              <h5><i class="bi bi-telephone me-2 text-brand"></i> Phone</h5>
+              <p class="mb-0">+92 300 0000000 (Mon–Fri, 9 AM–5 PM)</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body">
+              <h5><i class="bi bi-building me-2 text-brand"></i> Office</h5>
+              <p class="mb-0">Student Affairs Office, Main Campus</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer pt-5 pb-4">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-md-6">
+          <h5 class="text-white">Convocation 2025</h5>
+          <p class="mb-2">This is a sample template built with HTML, CSS, and Bootstrap. Replace placeholders with official content.</p>
+          <small class="text-muted">Do not reuse logos or copyrighted material without permission.</small>
+        </div>
+        <div class="col-md-3">
+          <h6 class="text-white">Quick Links</h6>
+          <ul class="list-unstyled">
+            <li><a href="#registration">Registration</a></li>
+            <li><a href="#guidelines">Guidelines</a></li>
+            <li><a href="#downloads">Downloads</a></li>
+            <li><a href="#venue">Venue</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h6 class="text-white">Follow</h6>
+          <div class="d-flex gap-3 fs-5">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="border-secondary my-4">
+      <div class="d-flex flex-wrap align-items-center justify-content-between small">
+        <span>© <span id="year"></span> Your University. All rights reserved.</span>
+        <span>Built with Bootstrap 5</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="backToTop" class="btn btn-brand rounded-circle shadow">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Countdown
+      const target = new Date('2025-12-20T09:30:00'); // Set your event date/time
+      const d = document.getElementById('cd-days');
+      const h = document.getElementById('cd-hours');
+      const m = document.getElementById('cd-mins');
+      const s = document.getElementById('cd-secs');
+
+      function pad(n){ return String(n).padStart(2,'0'); }
+      function tick(){
+        const now = new Date();
+        const diff = target - now;
+        if (diff <= 0) {
+          d.textContent = '00';
+          h.textContent = '00';
+          m.textContent = '00';
+          s.textContent = '00';
+          clearInterval(timer);
+          return;
+        }
+        const days = Math.floor(diff / (1000*60*60*24));
+        const hours = Math.floor((diff / (1000*60*60)) % 24);
+        const mins = Math.floor((diff / (1000*60)) % 60);
+        const secs = Math.floor((diff / 1000) % 60);
+        d.textContent = pad(days);
+        h.textContent = pad(hours);
+        m.textContent = pad(mins);
+        s.textContent = pad(secs);
+      }
+      const timer = setInterval(tick, 1000); tick();
+
+      // ScrollSpy refresh
+      const dataSpyList = [].slice.call(document.querySelectorAll('[data-bs-spy="scroll"]'))
+      dataSpyList.forEach(function (dataSpyEl) {
+        bootstrap.ScrollSpy.getInstance(dataSpyEl) || new bootstrap.ScrollSpy(dataSpyEl);
+      });
+
+      // Back to top visibility
+      const backToTop = document.getElementById('backToTop');
+      window.addEventListener('scroll', function(){
+        if (window.scrollY > 400) backToTop.style.display = 'inline-flex';
+        else backToTop.style.display = 'none';
+      });
+      backToTop.addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
+
+      // Footer year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>

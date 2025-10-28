@@ -1,0 +1,861 @@
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Convocation 2025</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Google Font (optional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+        /* Theme variables */
+:root {
+  --bs-primary: #7a0019;        /* Maroon-like primary */
+  --bs-primary-rgb: 122, 0, 25;
+  --bs-warning: #f4c430;        /* Gold accent */
+  --bs-warning-rgb: 244, 196, 48;
+}
+
+* { box-sizing: border-box; }
+body {
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  padding-top: 72px; /* for fixed navbar */
+  color: #222;
+}
+
+.section-padding { padding: 4.5rem 0; }
+
+/* Hero */
+.hero-section {
+  position: relative;
+  min-height: 85vh;
+  background: url('assets/hero.jpg') center/cover no-repeat fixed;
+}
+.hero-section .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.55) 0%,
+    rgba(0,0,0,0.35) 45%,
+    rgba(0,0,0,0.55) 100%
+  );
+}
+
+/* Cards & utilities */
+.icon-card { transition: transform .2s ease, box-shadow .2s ease; background: #fff; }
+.icon-card:hover { transform: translateY(-4px); box-shadow: 0 0.5rem 1.25rem rgba(0,0,0,.08); }
+
+.schedule-card .time { width: 56px; flex: 0 0 56px; }
+
+/* Footer */
+footer a:hover { text-decoration: underline; }
+
+/* Back to top */
+.back-to-top {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0.35rem 0.85rem rgba(0,0,0,.15);
+}
+
+/* Smooth scrolling */
+html { scroll-behavior: smooth; }
+
+/* Improve accordion hover */
+.accordion-button:not(.collapsed) {
+  color: #7a0019;
+  background-color: rgba(var(--bs-primary-rgb), .08);
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.08);
+}
+
+
+/* MESSAGES  */
+
+/* ===== Messages section (IBA-style) ===== */
+.section-muted { background: #f4f5f7; }
+
+.msg-card {
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 0 10px 26px rgba(0,0,0,.08);
+  overflow: hidden;
+}
+
+.msg-card .card-body { padding: 1.25rem 1.5rem; }
+@media (min-width: 992px) {
+  .msg-card .card-body { padding: 1.5rem 2rem; }
+}
+
+.msg-img-box {
+  height: 100%;
+  min-height: 220px;
+  overflow: hidden;
+}
+.msg-img { width: 100%; height: 100%; object-fit: cover; }
+
+.msg-title { font-weight: 700; margin-bottom: .25rem; }
+.msg-meta { color: #6c757d; }
+
+/* Maroon middle card with floating portrait on right */
+.msg-card-maroon {
+  position: relative;
+  background: var(--bs-primary);
+  color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0,0,0,.12);
+  overflow: visible; /* allow the floating image to sit outside */
+}
+.msg-card-maroon .card-body { padding: 1.75rem 2rem; }
+.msg-card-maroon .lead, .msg-card-maroon p { color: rgba(255,255,255,.92); }
+.msg-card-maroon .readmore { color: #ffd87a; text-decoration: none; }
+.msg-card-maroon .readmore:hover { text-decoration: underline; }
+
+/* Floating portrait card to the right */
+.msg-float {
+  position: absolute;
+  right: 18px;
+  bottom: -22px;
+  width: clamp(180px, 24vw, 280px);
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 12px 26px rgba(0,0,0,.15);
+  overflow: hidden;
+  z-index: 2;
+}
+.msg-float img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+
+/* Keep text from running under the floating image on large screens */
+@media (min-width: 992px) {
+  .msg-card-maroon .card-body { padding-right: clamp(280px, 28vw, 360px); }
+}
+
+/* Mobile behavior: stack image below and remove float */
+@media (max-width: 991.98px) {
+  .msg-card-maroon { overflow: hidden; }
+  .msg-float {
+    position: static;
+    width: 100%;
+    margin: 0;
+    border-radius: 0 0 14px 14px;
+    box-shadow: none;
+    bottom: auto; right: auto;
+  }
+}
+
+/* Read more links (light cards) */
+.readmore-link { color: #7a0019; text-decoration: none; }
+.readmore-link:hover { text-decoration: underline; }
+
+/* Subtle divider spacing between cards */
+.messages .card + .card,
+.messages .card + .msg-card-maroon,
+.messages .msg-card-maroon + .card { margin-top: 1.5rem; }
+  </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="90" tabindex="0">
+
+  <!-- Top Bar (optional) -->
+  <div class="bg-dark text-light small py-1">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <div class="d-flex align-items-center gap-3">
+        <span><i class="bi bi-calendar-event me-1"></i> Convocation: 14 Dec 2025</span>
+        <span class="d-none d-md-inline"><i class="bi bi-geo-alt me-1"></i> University Auditorium</span>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <a href="#registration" class="link-warning text-decoration-none"><i class="bi bi-person-badge me-1"></i> Register</a>
+        <a href="#contact" class="link-light text-decoration-none"><i class="bi bi-envelope me-1"></i> Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+        <img src="assets/logo.svg" alt="Logo" height="28" />
+        <span class="fw-bold">Convocation 2025</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="navContent" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#schedule">Schedule</a></li>
+          <li class="nav-item"><a class="nav-link" href="#registration">Registration</a></li>
+          <li class="nav-item"><a class="nav-link" href="#guidelines">Guidelines</a></li>
+          <li class="nav-item"><a class="nav-link" href="#venue">Venue</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faqs">FAQs</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-3">
+            <a href="#registration" class="btn btn-warning fw-semibold"><i class="bi bi-check2-circle me-1"></i> Register Now</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="home" class="hero-section d-flex align-items-center text-white">
+    <div class="overlay"></div>
+    <div class="container position-relative">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <span class="badge rounded-pill text-bg-warning mb-3">Class of 2025</span>
+          <h1 class="display-4 fw-bold mb-3">Celebrate Excellence at Convocation</h1>
+          <p class="lead mb-4">Join graduates, faculty, families, and alumni as we honor academic achievement and new beginnings.</p>
+          <div class="d-flex flex-wrap gap-2 mb-4">
+            <span class="badge bg-light text-dark"><i class="bi bi-calendar-week me-1"></i> 14 Dec 2025</span>
+            <span class="badge bg-light text-dark"><i class="bi bi-geo-alt me-1"></i> University Auditorium</span>
+            <span class="badge bg-light text-dark"><i class="bi bi-clock me-1"></i> 10:00 AM</span>
+          </div>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#registration" class="btn btn-warning btn-lg"><i class="bi bi-clipboard2-check me-1"></i> Register</a>
+            <a href="#schedule" class="btn btn-outline-light btn-lg"><i class="bi bi-calendar-check me-1"></i> View Schedule</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Messages -->
+<section id="messages" class="section-padding section-muted">
+  <div class="container">
+    <!-- Card 1: light, image left -->
+    <div class="card msg-card">
+      <div class="row g-0 align-items-center">
+        <div class="col-md-3">
+          <div class="msg-img-box">
+            <img src="President.jpg" alt="Message 1" class="msg-img">
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="card-body">
+            <h6 class="msg-title">My Dearest Students,</h6>
+            <p class="mb-2">
+              I extend my heartfelt congratulations to each of you for reaching this significant milestone in your educational journey, and we celebrate this moment with you.
+              Your hard work, dedication, and unwavering commitment have brought you to this moment, and I am immensely proud of your achievements... 
+              <a class="readmore-link" data-bs-toggle="collapse" href="#msg1More" role="button" aria-expanded="false" aria-controls="msg1More">read more</a>
+            </p>
+            <div class="collapse" id="msg1More">
+              <p class="mb-2">Graduation is a time of celebration, reflection, and anticipation. It marks the culmination of your academic endeavor and the beginning of new opportunities.</p>
+            </div>
+            <div class="msg-meta small fw-semibold">
+              S Akbar Zaidi<br>
+              <span class="fw-normal">Director, IBA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: maroon with floating portrait on the right -->
+    <div class="msg-card-maroon mt-4">
+      <div class="card-body">
+        <h6 class="msg-title text-white">Dear Class of 2025</h6>
+        <p class="mb-2 lead">
+          Please accept my heartfelt congratulations on the successful completion of your respective degree programs. I welcome you to the IBA’s vibrant alumni community and look forward to your valuable contribution as you embark on your professional journey. This is a new beginning for you to achieve personal and professional excellence in your respective fields... 
+          <a class="readmore" data-bs-toggle="collapse" href="#msg2More" role="button" aria-expanded="false" aria-controls="msg2More">read more</a>
+        </p>
+        <div class="collapse" id="msg2More">
+          <p class="mb-2">We should aim to excel not only in our professional lives but also in serving our community when and where possible.</p>
+        </div>
+        <div class="msg-meta small fw-semibold text-white-50">
+          Dr. Mohammad Asad Ilyas<br>
+          <span class="fw-normal">Registrar, IBA</span>
+        </div>
+      </div>
+
+      <!-- Floating portrait on the right -->
+      <div class="msg-float d-none d-md-block">
+        <img src="./KK.jpg" alt="Portrait">
+      </div>
+    </div>
+
+    <!-- Card 3: light, image left -->
+    <div class="card msg-card mt-4">
+      <div class="row g-0 align-items-center">
+        <div class="col-md-3">
+          <div class="msg-img-box">
+            <img src="assets/msg-3.jpg" alt="Message 3" class="msg-img">
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="card-body">
+            <h6 class="msg-title">My Dear IBA Graduates and Fellow Alumni,</h6>
+            <p class="mb-2">
+              It has been a long journey; yet you have finally made it! You have gone through some grueling challenges, some amazing accomplishments, and made friends along the way... 
+              <a class="readmore-link" data-bs-toggle="collapse" href="#msg3More" role="button" aria-expanded="false" aria-controls="msg3More">read more</a>
+            </p>
+            <div class="collapse" id="msg3More">
+              <p class="mb-2">I congratulate you and your loved ones on accomplishing a dream. We look forward to your continued engagement with IBA.</p>
+            </div>
+            <div class="msg-meta small fw-semibold">
+              Mohammed Sohail<br>
+              <span class="fw-normal">Alumni Representative on the Board of Governors (BoG)<br>Institute of Business Administration, Karachi</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Graduates' Guide Ribbon -->
+<section id="guide" class="guide-section">
+  <div class="guide-bg"></div>
+  <div class="container">
+    <div class="guide-ribbon-wrap">
+      <div class="guide-badge">
+        <img src="assets/cap-icon.svg" alt="Cap" width="70" height="70">
+      </div>
+      <div class="guide-ribbon">
+        <h3 class="fw-bold mb-1">Graduates' Guide</h3>
+        <p class="lead mb-3">Everything you need for the big day—timelines, gown collection, seating, and ceremony etiquette.</p>
+        <a class="btn btn-warning fw-semibold" href="#" download>
+          <i class="bi bi-download me-1"></i> Download Guide (PDF)
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Archives -->
+<section id="archives" class="section-padding">
+  <div class="container">
+    <div class="row align-items-center mb-4">
+      <div class="col">
+        <h2 class="fw-bold mb-0">Archives</h2>
+      </div>
+    </div>
+
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-4 justify-content-center">
+      <div class="col text-center">
+        <div class="archive-tile mx-auto">
+          <img src="assets/archive-1.jpg" alt="Archive 1">
+        </div>
+        <div class="archive-label">2024</div>
+      </div>
+      <div class="col text-center">
+        <div class="archive-tile mx-auto">
+          <img src="assets/archive-2.jpg" alt="Archive 2">
+        </div>
+        <div class="archive-label">2023</div>
+      </div>
+      <div class="col text-center">
+        <div class="archive-tile mx-auto">
+          <img src="assets/archive-3.jpg" alt="Archive 3">
+        </div>
+        <div class="archive-label">2022</div>
+      </div>
+      <div class="col text-center">
+        <div class="archive-tile mx-auto">
+          <img src="assets/archive-4.jpg" alt="Archive 4">
+        </div>
+        <div class="archive-label">2021</div>
+      </div>
+      <div class="col text-center">
+        <div class="archive-tile mx-auto">
+          <img src="assets/archive-2.jpg" alt="Archive 5">
+        </div>
+        <div class="archive-label">2020</div>
+      </div>
+      <div class="col text-center">
+        <div class="archive-tile mx-auto">
+          <img src="assets/archive-3.jpg" alt="Archive 6">
+        </div>
+        <div class="archive-label">2019</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Announcements -->
+  <section class="section-padding bg-light">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-lg-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-megaphone text-primary fs-3 me-2"></i>
+                <h5 class="card-title mb-0">Latest Update</h5>
+              </div>
+              <p class="mb-2">Gown collection starts one week before the event. Bring your ID card to the counter.</p>
+              <a href="#guidelines" class="link-primary text-decoration-none">Read guidelines <i class="bi bi-arrow-right-short"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-file-earmark-text text-primary fs-3 me-2"></i>
+                <h5 class="card-title mb-0">Program Booklet</h5>
+              </div>
+              <p class="mb-2">Download a PDF copy of the convocation program, schedule, and seating plan.</p>
+              <a href="#" class="link-primary text-decoration-none">Download PDF <i class="bi bi-download"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-camera-reels text-primary fs-3 me-2"></i>
+                <h5 class="card-title mb-0">Live Stream</h5>
+              </div>
+              <p class="mb-2">Family and friends can watch the ceremony live from anywhere in the world.</p>
+              <a href="#" class="link-primary text-decoration-none">Watch live <i class="bi bi-box-arrow-up-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section-padding">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-8">
+          <h2 class="fw-bold">About the Convocation</h2>
+          <p class="text-muted">A celebration of hard work, dedication, and community. Here’s what to expect on your big day.</p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="icon-card h-100 p-4 text-center border rounded-3">
+            <i class="bi bi-mortarboard fs-1 text-primary mb-3"></i>
+            <h5>Graduation Ceremony</h5>
+            <p class="text-muted mb-0">Formal conferment of degrees, with dignitaries and faculty on stage.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="icon-card h-100 p-4 text-center border rounded-3">
+            <i class="bi bi-people fs-1 text-primary mb-3"></i>
+            <h5>Guests & Families</h5>
+            <p class="text-muted mb-0">Each graduate may invite guests. Please check seating and entry timings.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="icon-card h-100 p-4 text-center border rounded-3">
+            <i class="bi bi-shield-check fs-1 text-primary mb-3"></i>
+            <h5>Safety & Protocols</h5>
+            <p class="text-muted mb-0">Follow security checks, dress code, and photography guidelines.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule -->
+  <section id="schedule" class="section-padding bg-light">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-8">
+          <h2 class="fw-bold">Event Schedule</h2>
+          <p class="text-muted">Timings are subject to minor changes. Arrive 30–45 minutes early for seating.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="schedule-card p-4 bg-white border rounded-3 shadow-sm h-100">
+            <h5 class="mb-3"><i class="bi bi-sun me-2 text-primary"></i> Morning Session</h5>
+            <ul class="list-unstyled mb-0">
+              <li class="d-flex align-items-start mb-3">
+                <div class="time me-3 text-primary fw-semibold">09:15</div>
+                <div>
+                  <div class="fw-semibold">Guest Seating</div>
+                  <div class="text-muted small">Auditorium opens for guests</div>
+                </div>
+              </li>
+              <li class="d-flex align-items-start mb-3">
+                <div class="time me-3 text-primary fw-semibold">10:00</div>
+                <div>
+                  <div class="fw-semibold">Procession & National Anthem</div>
+                  <div class="text-muted small">Academic procession enters</div>
+                </div>
+              </li>
+              <li class="d-flex align-items-start mb-0">
+                <div class="time me-3 text-primary fw-semibold">10:30</div>
+                <div>
+                  <div class="fw-semibold">Degree Conferment</div>
+                  <div class="text-muted small">Conferral of undergraduate and graduate degrees</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="schedule-card p-4 bg-white border rounded-3 shadow-sm h-100">
+            <h5 class="mb-3"><i class="bi bi-moon-stars me-2 text-primary"></i> Afternoon Session</h5>
+            <ul class="list-unstyled mb-0">
+              <li class="d-flex align-items-start mb-3">
+                <div class="time me-3 text-primary fw-semibold">12:30</div>
+                <div>
+                  <div class="fw-semibold">Keynote Address</div>
+                  <div class="text-muted small">Guest of honor speech</div>
+                </div>
+              </li>
+              <li class="d-flex align-items-start mb-3">
+                <div class="time me-3 text-primary fw-semibold">13:15</div>
+                <div>
+                  <div class="fw-semibold">Awards & Medals</div>
+                  <div class="text-muted small">Outstanding student awards</div>
+                </div>
+              </li>
+              <li class="d-flex align-items-start mb-0">
+                <div class="time me-3 text-primary fw-semibold">14:00</div>
+                <div>
+                  <div class="fw-semibold">Group Photos</div>
+                  <div class="text-muted small">Department-wise photo sessions</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration -->
+  <section id="registration" class="section-padding">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-8">
+          <h2 class="fw-bold">Registration</h2>
+          <p class="text-muted">Choose your category to proceed. Fill the form and check your email for confirmation.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center">
+              <i class="bi bi-person-check fs-1 text-primary mb-3"></i>
+              <h5>Graduates</h5>
+              <p class="text-muted">Submit your details and confirm your attendance.</p>
+              <a href="#" class="btn btn-outline-primary w-100">Start</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center">
+              <i class="bi bi-people fs-1 text-primary mb-3"></i>
+              <h5>Guests</h5>
+              <p class="text-muted">Register additional guests and seating preferences.</p>
+              <a href="#" class="btn btn-outline-primary w-100">Start</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center">
+              <i class="bi bi-easel2 fs-1 text-primary mb-3"></i>
+              <h5>Faculty</h5>
+              <p class="text-muted">Faculty participation and procession details.</p>
+              <a href="#" class="btn btn-outline-primary w-100">Start</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body text-center">
+              <i class="bi bi-hand-thumbs-up fs-1 text-primary mb-3"></i>
+              <h5>Volunteers</h5>
+              <p class="text-muted">Sign up to help organize the ceremony.</p>
+              <a href="#" class="btn btn-outline-primary w-100">Start</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Guidelines -->
+  <section id="guidelines" class="section-padding bg-light">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-8">
+          <h2 class="fw-bold">Participant Guidelines</h2>
+          <p class="text-muted">Please read carefully to ensure a smooth and memorable ceremony.</p>
+        </div>
+      </div>
+
+      <div class="accordion" id="guidelinesAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="g1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c1" aria-expanded="true" aria-controls="c1">
+              Dress Code & Academic Regalia
+            </button>
+          </h2>
+          <div id="c1" class="accordion-collapse collapse show" aria-labelledby="g1" data-bs-parent="#guidelinesAccordion">
+            <div class="accordion-body">
+              Graduates must wear full academic regalia. Gowns and caps can be collected from the gown desk with a valid ID.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="g2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2" aria-expanded="false" aria-controls="c2">
+              Entry, Security & Seating
+            </button>
+          </h2>
+          <div id="c2" class="accordion-collapse collapse" aria-labelledby="g2" data-bs-parent="#guidelinesAccordion">
+            <div class="accordion-body">
+              Arrive early for security checks. Follow ushers for seat allocation. Food and large bags are not allowed in the auditorium.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="g3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c3" aria-expanded="false" aria-controls="c3">
+              Photography & Media
+            </button>
+          </h2>
+          <div id="c3" class="accordion-collapse collapse" aria-labelledby="g3" data-bs-parent="#guidelinesAccordion">
+            <div class="accordion-body">
+              Official photographers will be present. Personal photography is allowed from designated areas without blocking aisles.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Venue -->
+  <section id="venue" class="section-padding">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-5">
+          <h2 class="fw-bold mb-3">Venue & Directions</h2>
+          <p class="text-muted">Find the best route and parking options for a hassle-free arrival.</p>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i> University Auditorium, City, Country</li>
+            <li class="mb-2"><i class="bi bi-p-square text-primary me-2"></i> On-campus parking available (P1, P2)</li>
+            <li class="mb-2"><i class="bi bi-bus-front text-primary me-2"></i> Public transport stop: Main Gate</li>
+          </ul>
+          <a href="#" class="btn btn-outline-primary"><i class="bi bi-map me-1"></i> Download Campus Map</a>
+        </div>
+        <div class="col-lg-7">
+          <div class="ratio ratio-16x9 rounded-3 overflow-hidden shadow-sm">
+            <!-- Replace src with your Google Maps embed -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d0!2d0!3d0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sYour%20University!5e0!3m2!1sen!2s!4v0000000000000"
+              style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section id="faqs" class="section-padding bg-light">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-8">
+          <h2 class="fw-bold">FAQs</h2>
+          <p class="text-muted">Answers to frequently asked questions.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="accordion" id="faqLeft">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="f1">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#fc1" aria-expanded="true" aria-controls="fc1">
+                  How many guests can I bring?
+                </button>
+              </h2>
+              <div id="fc1" class="accordion-collapse collapse show" aria-labelledby="f1" data-bs-parent="#faqLeft">
+                <div class="accordion-body">
+                  Guest limits are announced by the administration. Please check your registration portal for your quota.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="f2">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc2" aria-expanded="false" aria-controls="fc2">
+                  Is there accessible seating?
+                </button>
+              </h2>
+              <div id="fc2" class="accordion-collapse collapse" aria-labelledby="f2" data-bs-parent="#faqLeft">
+                <div class="accordion-body">
+                  Yes, accessible seating is available. Indicate your needs during registration or email us.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="accordion" id="faqRight">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="f3">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc3" aria-expanded="false" aria-controls="fc3">
+                  Will the event be live streamed?
+                </button>
+              </h2>
+              <div id="fc3" class="accordion-collapse collapse" aria-labelledby="f3" data-bs-parent="#faqRight">
+                <div class="accordion-body">
+                  Yes. A link will be shared on the website and social media on the ceremony day.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="f4">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fc4" aria-expanded="false" aria-controls="fc4">
+                  How do I collect my gown?
+                </button>
+              </h2>
+              <div id="fc4" class="accordion-collapse collapse" aria-labelledby="f4" data-bs-parent="#faqRight">
+                <div class="accordion-body">
+                  Collect your gown from the designated counter with your student ID and confirmation email.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section-padding">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <h2 class="fw-bold mb-3">Contact</h2>
+          <p class="text-muted">Questions about registration, seating, or schedules? We’re here to help.</p>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-envelope text-primary me-2"></i> convocation@university.edu</li>
+            <li class="mb-2"><i class="bi bi-telephone text-primary me-2"></i> +92 300 0000000</li>
+            <li class="mb-2"><i class="bi bi-globe text-primary me-2"></i> www.university.edu</li>
+          </ul>
+          <div class="d-flex gap-3 mt-3">
+            <a href="#" class="text-primary fs-5"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-primary fs-5"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="text-primary fs-5"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-primary fs-5"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body">
+              <form>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-control" placeholder="Your name">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" placeholder="you@example.com">
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Subject</label>
+                    <input type="text" class="form-control" placeholder="How can we help?">
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label">Message</label>
+                    <textarea rows="5" class="form-control" placeholder="Type your message..."></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-primary"><i class="bi bi-send me-1"></i> Send Message</button>
+                    <small class="text-muted ms-2">We typically respond within 1–2 business days.</small>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <img src="assets/logo.svg" alt="Logo" height="28" />
+            <span className="fw-bold">Convocation 2025</span>
+          </div>
+          <p class="text-secondary">Proudly celebrating the achievements of our graduates and the support of their families.</p>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="fw-semibold mb-3">Quick Links</h6>
+          <ul class="list-unstyled">
+            <li><a href="#about" class="link-light text-decoration-none">About</a></li>
+            <li><a href="#schedule" class="link-light text-decoration-none">Schedule</a></li>
+            <li><a href="#registration" class="link-light text-decoration-none">Registration</a></li>
+            <li><a href="#faqs" class="link-light text-decoration-none">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h6 class="fw-semibold mb-3">Resources</h6>
+          <ul class="list-unstyled">
+            <li><a href="#" class="link-light text-decoration-none">Program Booklet</a></li>
+            <li><a href="#" class="link-light text-decoration-none">Seating Plan</a></li>
+            <li><a href="#" class="link-light text-decoration-none">Campus Map</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h6 class="fw-semibold mb-3">Subscribe</h6>
+          <form class="d-flex gap-2">
+            <input type="email" class="form-control" placeholder="Email address">
+            <button class="btn btn-warning" type="button">Join</button>
+          </form>
+        </div>
+      </div>
+      <hr class="border-secondary my-4">
+      <div class="d-flex flex-wrap justify-content-between align-items-center">
+        <small class="text-secondary">© 2025 Your University. All rights reserved.</small>
+        <div class="d-flex gap-3">
+          <a href="#" class="link-secondary text-decoration-none">Privacy</a>
+          <a href="#" class="link-secondary text-decoration-none">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <a href="#home" class="back-to-top btn btn-primary rounded-circle"><i class="bi bi-arrow-up"></i></a>
+
+  <!-- Bootstrap JS (Bundle) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
