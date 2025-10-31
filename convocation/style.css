@@ -662,6 +662,8 @@ body {
   bottom: 18px;
   width: 44px;
   height: 44px;
+  transition: opacity 0.4s ease;
+  opacity: 0;
   display: grid;
   border-radius: 0px !important;
   place-items: center;
